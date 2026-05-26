@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#041a0f">
+  <title>Tenda de Oxóssi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #041a0f; color: #f0e8d0; font-family: 'Inter', sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px 48px; }
+    .container { width: 100%; max-width: 400px; display: flex; flex-direction: column; align-items: center; }
+    .emblem { width: 64px; height: 64px; border-radius: 50%; border: 1px solid rgba(184,155,94,0.5); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; background: rgba(184,155,94,0.06); }
+    h1 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; letter-spacing: 0.04em; color: #f0e8d0; text-align: center; margin-bottom: 4px; }
+    .subtitle { font-size: 10px; font-weight: 300; letter-spacing: 0.22em; text-transform: uppercase; color: #b89b5e; text-align: center; margin-bottom: 8px; }
+    .intro { font-size: 12px; color: rgba(240,232,208,0.5); text-align: center; line-height: 1.6; font-weight: 300; margin-bottom: 22px; max-width: 300px; }
+    .divider { width: 40px; height: 1px; background: #b89b5e; opacity: 0.35; margin-bottom: 22px; }
+    .links { width: 100%; display: flex; flex-direction: column; gap: 8px; }
+
+    .link-btn { display: flex; align-items: center; gap: 12px; width: 100%; padding: 11px 16px; border: 1px solid rgba(184,155,94,0.2); border-radius: 10px; background: rgba(184,155,94,0.04); color: #f0e8d0; text-decoration: none; transition: background 0.2s, border-color 0.2s; }
+    .link-btn:hover { background: rgba(184,155,94,0.1); border-color: rgba(184,155,94,0.5); }
+    .link-btn.primary { border-color: rgba(184,155,94,0.5); background: rgba(184,155,94,0.08); }
+    .link-btn.primary:hover { background: rgba(184,155,94,0.16); }
+
+    .icon { width: 32px; height: 32px; border-radius: 7px; background: rgba(184,155,94,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 15px; }
+    .link-btn.primary .icon { background: rgba(184,155,94,0.18); }
+
+    .label { font-size: 13px; font-weight: 500; color: #f0e8d0; }
+    .arrow { margin-left: auto; color: rgba(184,155,94,0.4); font-size: 18px; flex-shrink: 0; }
+    .link-btn.primary .arrow { color: rgba(184,155,94,0.7); }
+
+    .footer { margin-top: 32px; text-align: center; }
+    .footer p { font-size: 10px; color: rgba(184,155,94,0.25); letter-spacing: 0.16em; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="emblem">
+      <svg width="30" height="30" viewBox="0 0 42 42" fill="none">
+        <line x1="6" y1="36" x2="36" y2="6" stroke="#b89b5e" stroke-width="1.5" stroke-linecap="round"/>
+        <polyline points="36,6 28,8 34,14" fill="none" stroke="#b89b5e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="6" y1="36" x2="14" y2="28" stroke="#b89b5e" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="21" cy="21" r="19" stroke="#b89b5e" stroke-width="0.7" opacity="0.25"/>
+        <circle cx="21" cy="21" r="12" stroke="#b89b5e" stroke-width="0.5" opacity="0.15"/>
+      </svg>
+    </div>
+
+    <h1>Tenda de Oxóssi</h1>
+    <p class="subtitle">Terreiro de Umbanda</p>
+    <p class="intro">Acesse a agenda, confirme sua presença nas giras ou entre em contato com o dirigente.</p>
+    <div class="divider"></div>
+
+    <div class="links">
+      <a class="link-btn primary" href="https://atosdutrafreitas-wq.github.io/tenda-oxossi-app/" target="_blank" rel="noopener">
+        <div class="icon">📅</div>
+        <span class="label">Agenda de giras</span>
+        <span class="arrow">›</span>
+      </a>
+
+      <a class="link-btn primary" href="https://atosdutrafreitas-wq.github.io/tenda-oxossi-app/" target="_blank" rel="noopener">
+        <div class="icon">🏹</div>
+        <span class="label">Confirmar presença</span>
+        <span class="arrow">›</span>
+      </a>
+
+      <a class="link-btn" href="https://wa.me/5551993218789?text=Olá!%20Gostaria%20de%20falar%20com%20o%20dirigente%20da%20Tenda%20de%20Oxóssi" target="_blank" rel="noopener">
+        <div class="icon">🔮</div>
+        <span class="label">Falar com o dirigente</span>
+        <span class="arrow">›</span>
+      </a>
+
+      <a class="link-btn" href="https://wa.me/5551993218789?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Tenda%20de%20Oxóssi" target="_blank" rel="noopener">
+        <div class="icon">💬</div>
+        <span class="label">Quero conhecer a Tenda</span>
+        <span class="arrow">›</span>
+      </a>
+    </div>
+
+    <div class="footer">
+      <p>⸻ Okê Arô ⸻</p>
+    </div>
+  </div>
+</body>
+</html>
