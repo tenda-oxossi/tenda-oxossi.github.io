@@ -8,13 +8,61 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #041a0f; color: #f0e8d0; font-family: 'Inter', sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px 48px; }
+    body { background: #041a0f; color: #f0e8d0; font-family: 'Inter', sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 32px 20px 48px; }
     .container { width: 100%; max-width: 400px; display: flex; flex-direction: column; align-items: center; }
-    .emblem { width: 64px; height: 64px; border-radius: 50%; border: 1px solid rgba(184,155,94,0.5); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; background: rgba(184,155,94,0.06); }
-    h1 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; letter-spacing: 0.04em; color: #f0e8d0; text-align: center; margin-bottom: 4px; }
-    .subtitle { font-size: 10px; font-weight: 300; letter-spacing: 0.22em; text-transform: uppercase; color: #b89b5e; text-align: center; margin-bottom: 8px; }
-    .intro { font-size: 12px; color: rgba(240,232,208,0.5); text-align: center; line-height: 1.6; font-weight: 300; margin-bottom: 22px; max-width: 300px; }
-    .divider { width: 40px; height: 1px; background: #b89b5e; opacity: 0.35; margin-bottom: 22px; }
+
+    /* ── BANNER ── */
+    .banner {
+      display: block; width: 100%; text-decoration: none;
+      background: radial-gradient(ellipse at 30% 20%, #0d3320 0%, #041a0f 100%);
+      border: 1px solid rgba(184,155,94,0.25); border-radius: 16px;
+      padding: 28px 20px 24px; margin-bottom: 24px;
+      display: flex; flex-direction: column; align-items: center;
+      position: relative; overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .banner:hover { border-color: rgba(184,155,94,0.55); }
+    .banner::before {
+      content: ''; position: absolute;
+      width: 340px; height: 340px; border-radius: 50%;
+      border: 1px solid rgba(184,155,94,0.06);
+      top: 50%; left: 50%; transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .banner-corner {
+      position: absolute; opacity: 0.15;
+    }
+    .banner-corner.tl { top: 14px; left: 14px; }
+    .banner-corner.br { bottom: 14px; right: 14px; transform: rotate(180deg); }
+    .banner-emblem {
+      width: 64px; height: 64px; border-radius: 50%;
+      border: 1px solid rgba(184,155,94,0.4);
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(184,155,94,0.05); margin-bottom: 14px; position: relative;
+    }
+    .banner-title {
+      font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600;
+      color: #f0e8d0; letter-spacing: 0.04em; text-align: center;
+      margin-bottom: 4px; position: relative;
+    }
+    .banner-sub {
+      font-size: 9px; font-weight: 300; letter-spacing: 0.26em;
+      text-transform: uppercase; color: #b89b5e; margin-bottom: 18px; position: relative;
+    }
+    .banner-divider { width: 36px; height: 1px; background: #b89b5e; opacity: 0.35; margin-bottom: 16px; }
+    .banner-tagline {
+      font-size: 11px; font-weight: 300; color: rgba(240,232,208,0.45);
+      letter-spacing: 0.06em; text-align: center; line-height: 1.8;
+      margin-bottom: 18px; position: relative;
+    }
+    .banner-cta {
+      background: rgba(184,155,94,0.1); border: 1px solid rgba(184,155,94,0.4);
+      border-radius: 50px; padding: 7px 22px;
+      font-size: 10px; font-weight: 500; color: #b89b5e;
+      letter-spacing: 0.18em; text-transform: uppercase; position: relative;
+    }
+
+    /* ── LINKS ── */
     .links { width: 100%; display: flex; flex-direction: column; gap: 8px; }
 
     .link-btn { display: flex; align-items: center; gap: 12px; width: 100%; padding: 11px 16px; border: 1px solid rgba(184,155,94,0.2); border-radius: 10px; background: rgba(184,155,94,0.04); color: #f0e8d0; text-decoration: none; transition: background 0.2s, border-color 0.2s; }
@@ -29,27 +77,44 @@
     .arrow { margin-left: auto; color: rgba(184,155,94,0.4); font-size: 18px; flex-shrink: 0; }
     .link-btn.primary .arrow { color: rgba(184,155,94,0.7); }
 
-    .footer { margin-top: 32px; text-align: center; }
+    .footer { margin-top: 28px; text-align: center; }
     .footer p { font-size: 10px; color: rgba(184,155,94,0.25); letter-spacing: 0.16em; text-transform: uppercase; }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="emblem">
-      <svg width="30" height="30" viewBox="0 0 42 42" fill="none">
-        <line x1="6" y1="36" x2="36" y2="6" stroke="#b89b5e" stroke-width="1.5" stroke-linecap="round"/>
-        <polyline points="36,6 28,8 34,14" fill="none" stroke="#b89b5e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <line x1="6" y1="36" x2="14" y2="28" stroke="#b89b5e" stroke-width="1.5" stroke-linecap="round"/>
-        <circle cx="21" cy="21" r="19" stroke="#b89b5e" stroke-width="0.7" opacity="0.25"/>
-        <circle cx="21" cy="21" r="12" stroke="#b89b5e" stroke-width="0.5" opacity="0.15"/>
+
+    <!-- BANNER clicável → abre o app -->
+    <a class="banner" href="https://atosdutrafreitas-wq.github.io/tenda-oxossi-app/" target="_blank" rel="noopener">
+      <svg class="banner-corner tl" width="32" height="32" viewBox="0 0 40 40" fill="none">
+        <line x1="0" y1="40" x2="40" y2="0" stroke="#b89b5e" stroke-width="1"/>
+        <polyline points="40,0 32,2 38,8" fill="none" stroke="#b89b5e" stroke-width="1"/>
+        <line x1="0" y1="40" x2="10" y2="30" stroke="#b89b5e" stroke-width="1"/>
       </svg>
-    </div>
+      <svg class="banner-corner br" width="32" height="32" viewBox="0 0 40 40" fill="none">
+        <line x1="0" y1="40" x2="40" y2="0" stroke="#b89b5e" stroke-width="1"/>
+        <polyline points="40,0 32,2 38,8" fill="none" stroke="#b89b5e" stroke-width="1"/>
+        <line x1="0" y1="40" x2="10" y2="30" stroke="#b89b5e" stroke-width="1"/>
+      </svg>
 
-    <h1>Tenda de Oxóssi</h1>
-    <p class="subtitle">Terreiro de Umbanda</p>
-    <p class="intro">Acesse a agenda, confirme sua presença nas giras ou entre em contato com o dirigente.</p>
-    <div class="divider"></div>
+      <div class="banner-emblem">
+        <svg width="34" height="34" viewBox="0 0 42 42" fill="none">
+          <line x1="6" y1="36" x2="36" y2="6" stroke="#b89b5e" stroke-width="1.5" stroke-linecap="round"/>
+          <polyline points="36,6 28,8 34,14" fill="none" stroke="#b89b5e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="6" y1="36" x2="14" y2="28" stroke="#b89b5e" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="21" cy="21" r="19" stroke="#b89b5e" stroke-width="0.7" opacity="0.3"/>
+          <circle cx="21" cy="21" r="12" stroke="#b89b5e" stroke-width="0.5" opacity="0.2"/>
+        </svg>
+      </div>
 
+      <h1 class="banner-title">Tenda de Oxóssi</h1>
+      <p class="banner-sub">Terreiro de Umbanda</p>
+      <div class="banner-divider"></div>
+      <p class="banner-tagline">Agenda de giras · Confirmação de presença<br>Contato com o dirigente</p>
+      <span class="banner-cta">Acessar o app</span>
+    </a>
+
+    <!-- LINKS -->
     <div class="links">
       <a class="link-btn primary" href="https://atosdutrafreitas-wq.github.io/tenda-oxossi-app/" target="_blank" rel="noopener">
         <div class="icon">📅</div>
